@@ -1,0 +1,336 @@
+@charset "UTF-8";
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #F5E6D3;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ── Layout ── */
+.dashboard-wrapper {
+    display: flex;
+    height: 100vh;
+}
+
+/* ══════════════════════════════
+   SIDEBAR
+══════════════════════════════ */
+.sidebar {
+    width: 220px;
+    background-color: #FCE4CA;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.logo {
+    margin-bottom: 20px;
+    padding: 0 8px;
+}
+
+.logo-text {
+    font-family: 'Abhaya Libre', serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: #FF8C42;
+    font-style: italic;
+    line-height: 1.2;
+}
+
+/* Nav items */
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #555;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.nav-item:hover {
+    background-color: #f0d5b8;
+}
+
+.nav-item.active {
+    background-color: #e8d0b0;
+    color: #333;
+}
+
+.nav-item .icon {
+    font-size: 18px;
+}
+
+/* Sidebar user */
+.sidebar-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: #e8d0b0;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+    margin-top: auto;
+}
+
+/* ══════════════════════════════
+   MAIN CONTENT
+══════════════════════════════ */
+.main-content {
+    flex: 1;
+    padding: 24px 28px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Welcome banner */
+.welcome-banner {
+    background-color: #7BA7BC;
+    border-radius: 16px;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: #fff;
+}
+
+.welcome-banner h1 {
+    font-family: 'Abhaya Libre', serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.welcome-banner span {
+    font-size: 24px;
+}
+
+/* ── Stats cards ── */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.stat-card {
+    background: #FDEBD0;
+    border-radius: 16px;
+    padding: 20px 24px;
+    text-align: center;
+    border: 1.5px solid #e8d5bc;
+}
+
+.stat-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #888;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    font-family: 'Abhaya Libre', serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: #333;
+}
+
+/* ── Bottom grid ── */
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    flex: 1;
+}
+
+/* ── Table card (Adoption Requests) ── */
+.table-card {
+    background: #FDEBD0;
+    border-radius: 16px;
+    padding: 20px;
+    border: 1.5px solid #e8d5bc;
+}
+
+.table-card h3,
+.manage-card h3 {
+    font-family: 'Abhaya Libre', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #444;
+    margin-bottom: 14px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    text-align: left;
+    font-size: 13px;
+    font-weight: 700;
+    color: #555;
+    padding: 8px 10px;
+    border-bottom: 1.5px solid #e8d5bc;
+}
+
+tbody td {
+    padding: 10px 10px;
+    font-size: 13px;
+    color: #444;
+    border-bottom: 1px solid #f0dfc8;
+    vertical-align: middle;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.user-icon-sm {
+    margin-right: 6px;
+    font-size: 16px;
+}
+
+/* View button */
+.btn-view {
+    background: #7BA7BC;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+}
+
+.btn-view:hover {
+    background: #6a92a8;
+}
+
+/* ── Right panel ── */
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Manage cards */
+.manage-card {
+    background: #FDEBD0;
+    border-radius: 16px;
+    padding: 20px;
+    border: 1.5px solid #e8d5bc;
+}
+
+.manage-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+/* Add button */
+.btn-add {
+    background: #7BA7BC;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+}
+
+.btn-add:hover {
+    background: #6a92a8;
+}
+
+/* Edit button */
+.btn-edit {
+    background: #FDEBD0;
+    color: #555;
+    border: 1.5px solid #ddd;
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+}
+
+.btn-edit:hover {
+    background: #f0dfc8;
+}
+
+/* ── Products grid ── */
+.products-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px 12px;
+    border: 1.5px solid #e8d5bc;
+}
+
+.product-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.product-info {
+    flex: 1;
+}
+
+.product-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #333;
+}
+
+.product-price {
+    font-size: 12px;
+    color: #888;
+    font-weight: 600;
+}
+
+/* scrollbar styling */
+.main-content::-webkit-scrollbar {
+    width: 6px;
+}
+.main-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+.main-content::-webkit-scrollbar-thumb {
+    background: #e0c8a8;
+    border-radius: 10px;
+}
