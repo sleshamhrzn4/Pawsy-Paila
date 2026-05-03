@@ -87,7 +87,7 @@ nav {
 }
 
 .hero {
-    background-image: url("./images/bg(HS).png"); /* your image path */
+    background-image: url("./images/dog_cat(HS).png"); /* your image path */
     background-size: cover;       /* makes it fill like your design */
     background-position: center;  /* keeps it centered */
     background-repeat: no-repeat; /* prevents tiling */

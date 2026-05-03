@@ -1,12 +1,12 @@
 package com.pawsypaila_dao;
 
-import java.sql.Connection;
+import java.sql.Connection; 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import com.pawsypaila_model.OrderModel;
@@ -15,17 +15,17 @@ import com.pawsypaila_utilis.DBconfig;
 public class OrderDAO {
 	 
    
-    public int insertOrder(int userId, int paymentId, String orderStatus) throws Exception {
+    public int insertOrder(int userId, int paymentId, String orderStatus, String orderDate) throws Exception {
     	LocalDate localDate = LocalDate.parse(orderDate); 
-        Date sqlDate = Date.valueOf(localDate);
+    	Date sqlDate = Date.valueOf(localDate);
         
     	Connection con = DBconfig.getConnection();
         String sql = "INSERT INTO `Order` (userId, paymentId, orderDate, orderStatus) VALUES (?, ?, ?, ?)";
-        PreparedStatement pst = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+        PreparedStatement pst = con.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
 
         pst.setInt(1, userId);
         pst.setInt(2, paymentId);
-        pst.setDate(3, sqlDate);
+        pst.setDate(3,  sqlDate);
         pst.setString(4, orderStatus);
         pst.executeUpdate();
 
