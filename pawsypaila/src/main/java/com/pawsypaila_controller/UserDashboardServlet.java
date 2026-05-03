@@ -8,16 +8,16 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Servlet implementation class RegisterServlet
+ * Servlet implementation class UserDashboardServlet
  */
-@WebServlet(asyncSupported = true, urlPatterns = { "/Register" })
-public class RegisterServlet extends HttpServlet {
+@WebServlet(asyncSupported = true, urlPatterns = { "/UserDashboard" })
+public class UserDashboardServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RegisterServlet() {
+    public UserDashboardServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,11 +28,7 @@ public class RegisterServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-<<<<<<< HEAD
-		 request.getRequestDispatcher("/WEB-INF/pages/register.jsp").forward(request, response);
-=======
-		request.getRequestDispatcher("WEB-INF/pages/register.jsp").forward(request,response);
->>>>>>> f3579cd155e658f8280019019705c9cd50d14ed0
+		request.getRequestDispatcher("WEB-INF/pages/userDashboard.jsp").forward(request, response);
 	}
 
 	/**
