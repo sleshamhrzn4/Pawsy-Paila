@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+
+/* 1. The main bar container */
+.navbar {
+    background-color: #7999A8; /* That specific blue-grey from your image */
+    display: flex;             /* This aligns items in a row */
+    justify-content: space-between; /* Pushes Logo, Links, and Button apart */
+    align-items: center;       /* Centers everything vertically */
+    padding: 10px 80px;        /* Top/Bottom and Left/Right spacing */
+    width: 100%;
+    box-sizing: border-box;    /* Prevents padding from breaking the width */
+}
+
+/* 2. Style the Logo */
+.navbar img {
+    height: 50px;              /* Keeps the logo at a reasonable size */
+    width: auto;
+    display: block;
+}
+
+/* 3. The Links list */
+.nav-links {
+    list-style: none;          /* Removes the bullet points */
+    display: flex;             /* Makes the <li> items sit in a row */
+    gap: 30px;                 /* Adds space between each link */
+    margin: 0;
+    padding: 0;
+}
+
+/* 4. The actual text links */
+.nav-links a {
+    text-decoration: none;     /* Removes the underline */
+    color: white;              /* Makes the text white */
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* 5. Hover effect for links */
+.nav-links a:hover {
+    color: #f6a563;            /* Brand orange when you hover */
+    transition: 0.3s;
+}
+
+/* 6. The Login Button */
+.login-btn {
+    background-color: #f6a563; /* Brand orange background */
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;        /* Rounded corners */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #e58d4d; /* Slightly darker orange on hover */
+}
