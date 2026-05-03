@@ -16,18 +16,18 @@ import com.pawsypaila_utilis.DBconfig;
 
 public class UserDAO {
 
-    public void insertUser(String fullName, String phone, String email, String password) throws Exception {
+    public void insertUser(String fullName, String password, String phone, String email) throws Exception {
 
         Connection con = DBconfig.getConnection();
 
-        String sql = "INSERT INTO students (fullName, phone, email, password ) "
+        String sql = "INSERT INTO user (fullName, password, phone, email ) "
                    + "VALUES (?,?,?,?)";
 
         PreparedStatement pst = con.prepareStatement(sql);
         pst.setString(1, fullName);
-        pst.setString(2, phone);
-        pst.setString(3, email);
-        pst.setString(4, password);
+        pst.setString(2, password);
+        pst.setString(3, phone);
+        pst.setString(4, email);
         
         
 
@@ -47,9 +47,9 @@ public class UserDAO {
             UserModel u = new UserModel();
             // Mapping student_id
             u.setUserName(rs.getString("fullName"));
-            u.setUserEmail(rs.getString("email"));
-            u.setPassword(rs.getString("password"));
-            u.setPhone(rs.getString("phone"));
+            u.setemail(rs.getString("password"));
+            u.setPassword(rs.getString("phone"));
+            u.setPhone(rs.getString("email"));
             
             users.add(u);
         }
@@ -74,9 +74,9 @@ public class UserDAO {
             user = new UserModel();
             user.setUserId(rs.getInt("userId"));
             user.setUserName(rs.getString("fullName"));
-            user.setPhone(rs.getString("phone"));
-            user.setUserEmail(rs.getString("email"));
             user.setPassword(rs.getString("password"));
+            user.setPhone(rs.getString("phone"));
+            user.setemail(rs.getString("email"));
         }
  
         rs.close();
@@ -87,20 +87,20 @@ public class UserDAO {
  
     
     // Create a updateUser method which takes fullname, email, password and phone as input and return rowsAffected
-    public int updateStudent (int userID, String fullName, String email, String password, String phone) throws Exception {
+    public int updateStudent (int userID, String fullName, String password, String phone, String email) throws Exception {
     	
     
      
      Connection con = DBconfig.getConnection();
      
-     String sql = "UPDATE students SET fullName =?, phone =?, email = ?, phone =?, password =?  where student_id=?";
+     String sql = "UPDATE students SET fullName =?, password =?, phone =?, email = ? where student_id=?";
      
      PreparedStatement pst = con.prepareStatement(sql);
      
      pst.setString(1, fullName);
-     pst.setString(2, phone);
-     pst.setString(3, email);
-     pst.setString(4, password);
+     pst.setString(2, password);
+     pst.setString(3, phone);
+     pst.setString(4, email);
     
     
      

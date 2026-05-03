@@ -3,7 +3,7 @@ package com.pawsypaila_model;
 public class UserModel {
 	 private int userId;
 	    private String userName;
-	    private String userEmail;
+	    private String email;
 	    private String password;
 	    private String phone;
 	    private String userRole;
@@ -15,8 +15,8 @@ public class UserModel {
 	    public String getUserName() { return userName; }
 	    public void setUserName(String userName) { this.userName = userName; }
 
-	    public String getUserEmail() { return userEmail; }
-	    public void setUserEmail(String userEmail) { this.userEmail = userEmail; }
+	    public String getemail() { return email; }
+	    public void setemail(String email) { this.email = email; }
 
 	    public String getPassword() { return password; }
 	    public void setPassword(String password) { this.password = password; }
