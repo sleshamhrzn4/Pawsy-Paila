@@ -1,0 +1,199 @@
+@charset "UTF-8";
+/* 1. The Layout Foundations */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fdf2e3; /* Peach/Cream background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #3a2e24;
+}
+
+.wrapper {
+    display: flex; /* Puts sidebar and main content side-by-side */
+    min-height: 100vh;
+}
+
+/* 2. Sidebar Styling */
+.sidebar {
+    width: 260px;
+    background-color: #fcebd7; /* Slightly darker cream */
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 140px;
+    margin-bottom: 40px;
+}
+
+.nav-links {
+    list-style: none;
+    flex-grow: 1;
+}
+
+.nav-links li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.nav-links li img {
+    width: 24px;
+    height: 24px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #3a2e24;
+    font-weight: 500;
+}
+
+.nav-links li.active {
+    background-color: #dccdbb; /* Highlighted link color */
+}
+
+.user-info-bottom {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    background-color: #dccdbb;
+    border-radius: 50px;
+}
+
+.profile-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+/* 3. Main Content Area */
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.welcome-banner {
+    background-color: #7a9ea8; /* Blue-grey banner */
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* 4. Statistics Row */
+.stats-row {
+    display: flex;
+    gap: 20px;
+}
+
+.stat-card {
+    flex: 1;
+    background-color: #fbe6cc;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.stat-label { font-size: 14px; color: #6b5744; font-weight: 600; }
+.stat-number { font-size: 32px; font-weight: bold; margin-top: 5px; }
+.stat-number.blue { color: #5a8e9e; }
+.stat-number.orange { color: #e8823a; }
+.stat-number.green { color: #38a169; }
+
+/* 5. Dashboard Grid (Profile + Right Column) */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 25px;
+}
+
+.card {
+    background-color: #fbe6cc;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.card-title-center {
+    text-align: center;
+    border-bottom: 1px solid #dcc6b0;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Profile Specifics */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.large-avatar { width: 60px; height: 60px; border-radius: 50%; background:#fbe6cc ; }
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #dcc6b0;
+    font-size: 14px;
+}
+
+/* Right Column Layout */
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bottom-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.status { text-align: right; font-weight: bold; }
+.order-item { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px; }
+
+/* Donation Section */
+.amount-chips { display: flex; gap: 5px; margin: 10px 0; justify-content: center; }
+.amount-chips span {
+    border: 1px solid #e8823a;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 11px;
+}
+
+.donate-card input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #dcc6b0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.donate-btn {
+    width: 100%;
+    background-color: #f6a563;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
