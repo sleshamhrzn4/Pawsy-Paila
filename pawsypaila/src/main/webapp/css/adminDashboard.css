@@ -1,0 +1,337 @@
+
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5e6d3;
+    color: #3a2e24;
+}
+
+/* ── LAYOUT WRAPPER ── */
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* =============================================
+   SIDEBAR
+   ============================================= */
+.sidebar {
+    width: 200px;
+    background-color: #f0dcc5;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px;
+    flex-shrink: 0;
+}
+
+/* Logo */
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo img {
+    width: 120px;
+}
+
+/* Nav Links */
+.nav-links {
+    list-style: none;
+    flex: 1;
+}
+
+.nav-links li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.nav-links li img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #6b5744;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.nav-links li:hover {
+    background-color: #e8d5bc;
+}
+
+.nav-links li.active {
+    background-color: #7a9ea8;
+}
+
+.nav-links li.active a {
+    color: #ffffff;
+}
+
+/* User Info at bottom of sidebar */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #e8d5bc;
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.user-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #3a2e24;
+}
+
+/* =============================================
+   PROFILE IMAGE - used everywhere
+   ============================================= */
+.profile-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    display: block;
+}
+
+/* =============================================
+   MAIN CONTENT
+   ============================================= */
+.main-content {
+    flex: 1;
+    padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Welcome Banner */
+.welcome-banner {
+    background-color: #7a9ea8;
+    color: white;
+    padding: 18px 25px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.welcome-banner h1 {
+    font-size: 24px;
+    text-align: center;
+}
+.header {
+    background-color: #7a9ea8;
+    padding: 18px 25px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.header h1 {
+    font-size: 24px;
+    text-align: center;
+}
+/* 
+   STAT CARDS
+ */
+.stats-row {
+    display: flex;
+    gap: 15px;
+}
+
+.stat-card {
+    flex: 1;
+    background-color: #fdf6ee;
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.stat-label {
+    font-size: 13px;
+    color: #9c8474;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.stat-number {
+    font-size: 34px;
+    font-weight: bold;
+    color: #3a2e24;
+}
+
+.stat-number.orange {
+    color: #e8823a;
+}
+
+.stat-number.small {
+    font-size: 22px;
+}
+
+/* =============================================
+   BOTTOM SECTION
+   ============================================= */
+.bottom-section {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* Card shared style */
+.card {
+    background-color: #fdf6ee;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    overflow: hidden;
+    flex: 1;
+}
+
+.card-title {
+    font-size: 15px;
+    font-weight: bold;
+    padding: 14px 18px;
+    border-bottom: 1px solid #ede0ce;
+    color: #3a2e24;
+}
+
+/* Adoption table takes more space */
+.bottom-section > .card:first-child {
+    flex: 1.2;
+}
+
+/* =============================================
+   ADOPTION TABLE
+   ============================================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table tr {
+    border-bottom: 1px solid #ede0ce;
+}
+
+table tr:last-child {
+    border-bottom: none;
+}
+
+table tr:hover {
+    background-color: #f5ece0;
+}
+
+table td {
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #3a2e24;
+    vertical-align: middle;
+}
+
+/* First column - profile image cell */
+table td:first-child {
+    width: 40px;
+    text-align: center;
+}
+
+table a {
+    color: #7a9ea8;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+table a:hover {
+    text-decoration: underline;
+    color: #e8823a;
+}
+
+/* Status Badges */
+.badge {
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.badge.pending {
+    background-color: #fde8d4;
+    color: #c86820;
+}
+
+.badge.reviewing {
+    background-color: #d4e8ef;
+    color: #3d7d8e;
+}
+
+.badge.approved {
+    background-color: #d4eadb;
+    color: #38724a;
+}
+
+.badge.rejected {
+    background-color: #f2d9d5;
+    color: #a04035;
+}
+
+/* =============================================
+   RIGHT SIDE (Donations + Payments)
+   ============================================= */
+.right-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Simple List */
+.simple-list {
+    list-style: none;
+    padding: 8px 0;
+}
+
+.simple-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 18px;
+    border-bottom: 1px solid #ede0ce;
+    font-size: 13px;
+    font-weight: bold;
+    color: #3a2e24;
+}
+
+.simple-list li:last-child {
+    border-bottom: none;
+}
+
+.simple-list li:hover {
+    background-color: #f5ece0;
+}
+
+/* Left side of each list item (image + name together) */
+.list-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
