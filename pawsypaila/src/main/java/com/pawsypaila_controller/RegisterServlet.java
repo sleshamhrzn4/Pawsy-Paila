@@ -7,12 +7,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import com.pawsypaila_dao.UserDAO;
-
 /**
- * Servlet implementation class signupController
+ * Servlet implementation class RegisterServlet
  */
-@WebServlet(asyncSupported = true, urlPatterns = { "/register" })
+@WebServlet(asyncSupported = true, urlPatterns = { "/Register" })
 public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -29,29 +27,17 @@ public class RegisterServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 
-		request.getRequestDispatcher("/WEB-INF/pages/register.jsp").forward(request,response);
-		
-	}
+		 request.getRequestDispatcher("/WEB-INF/pages/register.jsp").forward(request, response);}
 
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	    String fullName = request.getParameter("fullName");
-	    String phone    = request.getParameter("phone");
-	    String email    = request.getParameter("email");
-	    String password = request.getParameter("password");
-
-	    UserDAO userDAO = new UserDAO();
-	    try {
-			userDAO.insertUser(fullName, phone, email, password);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	    response.sendRedirect(request.getContextPath() + "/login");
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }
