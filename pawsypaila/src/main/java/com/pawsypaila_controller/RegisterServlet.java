@@ -28,12 +28,9 @@ public class RegisterServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-<<<<<<< HEAD
-		 request.getRequestDispatcher("/WEB-INF/pages/register.jsp").forward(request, response);
-=======
-		request.getRequestDispatcher("WEB-INF/pages/register.jsp").forward(request,response);
->>>>>>> f3579cd155e658f8280019019705c9cd50d14ed0
-	}
+
+		 request.getRequestDispatcher("/WEB-INF/pages/register.jsp").forward(request, response);}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
