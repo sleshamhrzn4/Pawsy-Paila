@@ -6,7 +6,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import com.pawsypaila_dao.RegisterDAO;
 
 /**
  * Servlet implementation class signupController
@@ -34,24 +33,19 @@ public class RegisterServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-    String fullName = request.getParameter("fullName");
-    String phone    = request.getParameter("phone");
-    String email    = request.getParameter("email");
-    String password = request.getParameter("password");
+	    String fullName = request.getParameter("fullName");
+	    String phone    = request.getParameter("phone");
+	    String email    = request.getParameter("email");
+	    String password = request.getParameter("password");
 
-    RegisterDAO dao = new RegisterDAO();
+	    System.out.println("Name: "     + fullName);
+	    System.out.println("Phone: "    + phone);
+	    System.out.println("Email: "    + email);
+	    System.out.println("Password: " + password);
 
-    try {
-        dao.insertUser(fullName, phone, email, password);
-        System.out.println("User inserted successfully");
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
-
-    response.sendRedirect(request.getContextPath() + "/register");
+	    response.sendRedirect(request.getContextPath() + "/register");
 	}
 
 }
