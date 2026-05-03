@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@page isELIgnored = "false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +8,9 @@
  <link rel="stylesheet" href="./css/Product.css">
 </head>
 <body>
-  <nav>
+<nav>
     <div class="logo">
-       <img src="${pageContext.request.contextPath}/images/logo.png.png" alt="Pawsy Logo" height="40">
+       <img src="./images/logo.png" alt="Pawsy Logo" height="40">
     </div>
 
     <ul class="nav-links">
@@ -34,7 +33,7 @@
             </a>
         </c:otherwise>
     </c:choose>
-</nav>  
+</nav>
 
 <!-- HERO -->
 <section class="hero">
@@ -47,7 +46,7 @@
     </div>
 
     <div class="hero-image">
-        <img src="./images/dog_cat(HS).png" alt="Pets" class="hero-image">
+        <img src="./images/dog_cat(HS).png" alt="Pets">
     </div>
 
 </section>
